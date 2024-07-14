@@ -1,5 +1,6 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_app/base/res/styles/app_styles.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -21,26 +22,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Column(
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           "Good Morning",
-                          style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style: AppStyles.headLineStyle3,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Text(
                           "Book Tickets",
-                          style: TextStyle(
-                            fontSize: 26,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF3b3b3b),
-                          ),
+                          style: AppStyles.headLineStyle1,
                         ),
                       ],
                     ),
