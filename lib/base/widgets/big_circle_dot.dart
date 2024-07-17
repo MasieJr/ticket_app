@@ -20,7 +20,7 @@ class BigCircleDot extends StatelessWidget {
               : const BorderRadius.only(
                   topRight: Radius.circular(10),
                   bottomRight: Radius.circular(10),
-                ),
+                  h),
         ),
       ),
     );
