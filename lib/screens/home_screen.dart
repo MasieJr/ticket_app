@@ -86,6 +86,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   bigText: "Upcoming Flights",
                   smallText: "View all",
                 ),
+                const SizedBox(
+                  height: 20,
+                ),
                 const TicketView()
               ],
             ),
