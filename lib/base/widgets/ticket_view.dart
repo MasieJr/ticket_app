@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
+import 'package:ticket_app/base/widgets/app_column_text_layout.dart';
 import 'package:ticket_app/base/widgets/app_layout_builder_widget.dart';
 import 'package:ticket_app/base/widgets/big_circle_dot.dart';
 import 'package:ticket_app/base/widgets/big_dot.dart';
@@ -118,66 +119,41 @@ class TicketView extends StatelessWidget {
                 ],
               ),
             ),
-
             //Orange part
             Container(
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: AppStyles.ticketRed,
-                  borderRadius: const BorderRadius.only(
-                    bottomRight: Radius.circular(21),
-                    bottomLeft: Radius.circular(21),
-                  ),
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: AppStyles.ticketRed,
+                borderRadius: const BorderRadius.only(
+                  bottomRight: Radius.circular(21),
+                  bottomLeft: Radius.circular(21),
                 ),
-                child: Column(
-                  children: [
-                    //date
-                    Row(
-                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const TextStyleThird(
-                          text: "May",
-                        ),
-                        Expanded(child: Container()),
-                        const TextStyleThird(
-                          text: "08:00 AM",
-                        ),
-                        Expanded(child: Container()),
-                        const TextStyleThird(
-                          text: "23",
-                        ),
-                      ],
-                    ),
-                    //names with times
-                    const SizedBox(
-                      height: 3,
-                    ),
-                    Row(
-                      children: [
-                        const SizedBox(
-                          width: 100,
-                          child: TextStyleFourth(
-                            text: "Date",
-                          ),
-                        ),
-                        Expanded(child: Container()),
-                        Text(
-                          "Departure Time",
-                          style: AppStyles.headLineStyle4
-                              .copyWith(color: Colors.white),
-                        ),
-                        Expanded(child: Container()),
-                        const SizedBox(
-                          width: 100,
-                          child: TextStyleFourth(
-                            text: "number",
-                            align: TextAlign.end,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                )),
+              ),
+              child: const Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      AppColumnTextLayout(
+                        alignment: CrossAxisAlignment.start,
+                        topText: "1 MAY",
+                        bottomText: "DATE",
+                      ),
+                      AppColumnTextLayout(
+                        alignment: CrossAxisAlignment.center,
+                        topText: "08:00 AM",
+                        bottomText: "Departure Time",
+                      ),
+                      AppColumnTextLayout(
+                        alignment: CrossAxisAlignment.end,
+                        topText: "23",
+                        bottomText: "Number",
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
