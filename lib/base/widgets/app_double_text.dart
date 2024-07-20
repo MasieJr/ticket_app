@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_app/base/res/app_routes.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 
 class AppDoubleText extends StatelessWidget {
@@ -22,10 +21,7 @@ class AppDoubleText extends StatelessWidget {
           style: AppStyles.headLineStyle2,
         ),
         InkWell(
-          onTap: () => Navigator.pushNamed(
-            context,
-            AppRoutes.allTickets,
-          ),
+          onTap: func,
           child: Text(
             smallText,
             style: AppStyles.textStyle.copyWith(

@@ -1,10 +1,12 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_app/base/res/app_routes.dart';
 import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'package:ticket_app/base/utils/app_json.dart';
 import 'package:ticket_app/base/widgets/app_double_text.dart';
 import 'package:ticket_app/base/widgets/ticket_view.dart';
+import 'package:ticket_app/screens/widgets/hotel.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -83,9 +85,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(
                   height: 40,
                 ),
-                const AppDoubleText(
+                AppDoubleText(
                   bigText: "Upcoming Flights",
                   smallText: "View all",
+                  func: () => Navigator.pushNamed(
+                    context,
+                    AppRoutes.allTickets,
+                  ),
                 ),
                 const SizedBox(
                   height: 20,
@@ -106,10 +112,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(
                   height: 40,
                 ),
-                const AppDoubleText(
+                AppDoubleText(
                   bigText: "Hotels",
                   smallText: "View all",
+                  func: () => Navigator.pushNamed(
+                    context,
+                    AppRoutes.allTickets,
+                  ),
                 ),
+                Hotel(),
               ],
             ),
           ),
