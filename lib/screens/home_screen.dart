@@ -103,6 +103,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         .toList(),
                   ),
                 ),
+                const SizedBox(
+                  height: 40,
+                ),
+                const AppDoubleText(
+                  bigText: "Hotels",
+                  smallText: "View all",
+                ),
               ],
             ),
           ),
