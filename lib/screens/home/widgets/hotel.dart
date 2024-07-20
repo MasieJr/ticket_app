@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
 
 class Hotel extends StatelessWidget {
-  const Hotel({super.key});
+  final Map<String, dynamic> hotel;
+  const Hotel({super.key, required this.hotel});
 
   @override
   Widget build(BuildContext context) {
+    print("assets/images/${hotel["images"][1]}");
     final size = MediaQuery.of(context).size;
     return Container(
+      margin: const EdgeInsets.only(right: 15),
+      padding: const EdgeInsets.all(8.0),
       width: size.width * 0.6,
       height: 350,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(18),
         color: AppStyles.primaryColor,
       ),
       child: Column(
@@ -22,9 +25,9 @@ class Hotel extends StatelessWidget {
             height: 180,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              image: const DecorationImage(
+              image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage(AppMedia.hotelRoom),
+                image: AssetImage("assets/images/${hotel["images"][1]}"),
               ),
             ),
           ),
@@ -34,17 +37,33 @@ class Hotel extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Text(
-              "Open Space",
+              hotel["place"],
               style:
-                  AppStyles.headLineStyle2.copyWith(color: AppStyles.kakiColor),
+                  AppStyles.headLineStyle1.copyWith(color: AppStyles.kakiColor),
             ),
+          ),
+          const SizedBox(
+            height: 5,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 15),
             child: Text(
-              "Open Space",
-              style:
-                  AppStyles.headLineStyle2.copyWith(color: AppStyles.kakiColor),
+              hotel["destination"],
+              style: AppStyles.headLineStyle3.copyWith(
+                color: Colors.white,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 5,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 15),
+            child: Text(
+              "\$${hotel['price'].toString()}/night",
+              style: AppStyles.headLineStyle1.copyWith(
+                color: AppStyles.kakiColor,
+              ),
             ),
           ),
         ],

@@ -6,7 +6,7 @@ import 'package:ticket_app/base/res/styles/app_styles.dart';
 import 'package:ticket_app/base/utils/app_json.dart';
 import 'package:ticket_app/base/widgets/app_double_text.dart';
 import 'package:ticket_app/base/widgets/ticket_view.dart';
-import 'package:ticket_app/screens/widgets/hotel.dart';
+import 'package:ticket_app/screens/home/widgets/hotel.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -28,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -96,11 +97,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(
                   height: 20,
                 ),
+                //Dynamic Ticket
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: ticketList
-                        .take(4)
+                        .take(2)
                         .map(
                           (singleTicket) => TicketView(
                             ticket: singleTicket,
@@ -120,7 +122,22 @@ class _HomeScreenState extends State<HomeScreen> {
                     AppRoutes.allTickets,
                   ),
                 ),
-                Hotel(),
+                const SizedBox(
+                  height: 20,
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: hotelList
+                        .take(2)
+                        .map(
+                          (singleHotel) => Hotel(
+                            hotel: singleHotel,
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ),
               ],
             ),
           ),
