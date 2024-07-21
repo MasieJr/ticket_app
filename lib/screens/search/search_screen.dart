@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
+import 'package:ticket_app/screens/search/widgets/app_ticket_tab.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -20,6 +21,10 @@ class SearchScreen extends StatelessWidget {
               fontSize: 35,
             ),
           ),
+          const SizedBox(
+            height: 20,
+          ),
+          const AppTicketTab(),
         ],
       ),
     );
