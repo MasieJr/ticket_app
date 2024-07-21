@@ -23,7 +23,9 @@ class AppTabs extends StatelessWidget {
         ),
         color: isSelected == true ? Colors.white : Colors.transparent,
       ),
-      child: Center(child: Text(tabName)),
+      child: Center(
+        child: Text(tabName),
+      ),
     );
   }
 }
